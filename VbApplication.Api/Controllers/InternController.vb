@@ -60,6 +60,7 @@ Public Class InternController
             ' Kullanıcı varsa, mevcut kullanıcıyı güncelle
             _mapper.Map(dto, existingUser)
             _userRepository.Update(existingUser)
+
         Else
             ' Kullanıcı yoksa, yeni bir kullanıcı oluştur
             Dim newUser As User = _mapper.Map(Of User)(dto)
