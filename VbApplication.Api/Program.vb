@@ -20,6 +20,7 @@ Module Program
 
 
         builder.Services.AddScoped(Of IUserRepository, UserRepository)
+        builder.Services.AddScoped(Of IPasswordHistoryRepository, PasswordHistoryRepository)
 
         builder.Services.AddScoped(Of IUserBs, UserBs)
         builder.Services.AddScoped(Of ICustomerBs, CustomerBs)
