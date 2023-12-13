@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Xu01qxGeY2OL1RQrVsp7Im9438vxmauVLow1voA0c8Y=",
+  "Source": "VbApplication.Api",
+  "BasePath": "_content/VbApplication.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

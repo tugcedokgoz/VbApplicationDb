@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<RootNamespace>VbApplication.Api</RootNamespace>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="Controllers\WeatherForecastController.vb" />
+	  <None Include="WeatherForecast.vb" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="8.1.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\VbApplication.Business\VbApplication.Business.vbproj" />
+	  <ProjectReference Include="..\VbApplication.DataAccess\VbApplication.DataAccess.vbproj" />
+	  <ProjectReference Include="..\VbApplication.Modell\VbApplication.Model.vbproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\bin\Debug\net7.0\VbApplication.Model.deps.json
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\bin\Debug\net7.0\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\bin\Debug\net7.0\VbApplication.Model.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.AssemblyInfoInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.AssemblyInfo.cs
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.csproj.CoreCompileInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\refint\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\ref\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\bin\Debug\net7.0\VbApplication.Model.runtimeconfig.json
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.csproj.AssemblyReference.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Model\obj\Debug\net7.0\VbApplication.Model.genruntimeconfig.cache

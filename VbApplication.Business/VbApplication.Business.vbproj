@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>VbApplication.Business</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VbApplication.DataAccess\VbApplication.DataAccess.vbproj" />
+    <ProjectReference Include="..\VbApplication.Modell\VbApplication.Model.vbproj" />
+  </ItemGroup>
+
+</Project>

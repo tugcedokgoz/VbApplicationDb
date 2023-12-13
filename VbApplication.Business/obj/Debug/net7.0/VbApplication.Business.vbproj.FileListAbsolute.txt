@@ -1,0 +1,17 @@
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.Business.deps.json
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.Business.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.Business.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.vbproj.AssemblyReference.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.AssemblyInfoInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.AssemblyInfo.vb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.vbproj.CoreCompileInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\refint\VbApplication.Business.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\ref\VbApplication.Business.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.Model.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\obj\Debug\net7.0\VbApplication.Business.vbproj.CopyComplete
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.DataAccess.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Business\bin\Debug\net7.0\VbApplication.DataAccess.pdb

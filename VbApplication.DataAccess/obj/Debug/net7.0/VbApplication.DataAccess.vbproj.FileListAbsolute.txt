@@ -1,0 +1,17 @@
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.DataAccess.deps.json
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.DataAccess.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.DataAccess.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.AssemblyInfoInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.AssemblyInfo.vb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.vbproj.CoreCompileInputs.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\refint\VbApplication.DataAccess.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\ref\VbApplication.DataAccess.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.DataAccess.runtimeconfig.json
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.Model.dll
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\bin\Debug\net7.0\VbApplication.Model.pdb
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.vbproj.AssemblyReference.cache
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.vbproj.CopyComplete
+C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.DataAccess\obj\Debug\net7.0\VbApplication.DataAccess.genruntimeconfig.cache
