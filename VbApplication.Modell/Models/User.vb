@@ -11,17 +11,19 @@ Namespace Models
 
         Public Property Password As String
 
-        Public Property Department As String
-
-        Public Property CreatedDate As Date
-
         Public Property Active As Boolean?
+
+        Public Property CreatedDate As Date?
+
+        Public Property UpdatedDate As Date?
 
         Public Property CustTitle As String
 
         Public Property CustGender As String
 
         Public Property CustDateOfBirth As Date?
+
+        Public Property Department As String
 
         Public Property EmpPosition As String
 
@@ -46,8 +48,6 @@ Namespace Models
         Public Property SupContactSurname As String
 
         Public Property SupContactTitle As String
-
-        Public Property Discriminator As String
 
         Public Overridable ReadOnly Property PasswordHistories As ICollection(Of PasswordHistory) = New List(Of PasswordHistory)()
     End Class

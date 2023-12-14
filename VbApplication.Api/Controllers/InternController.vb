@@ -13,12 +13,14 @@ Public Class InternController
     Private ReadOnly _mapper As IMapper
     Private ReadOnly _userBs As IUserBs
     Private ReadOnly _userRepository As IUserRepository
+    Private ReadOnly _passwordHistoryRepository As IPasswordHistoryRepository
 
-    Public Sub New(internBs As IInternBs, mapper As IMapper, userBs As IUserBs, userRepository As IUserRepository)
+    Public Sub New(internBs As IInternBs, mapper As IMapper, userBs As IUserBs, userRepository As IUserRepository, passwordHistoryRepository As IPasswordHistoryRepository)
         _internBs = internBs
         _mapper = mapper
         _userBs = userBs
         _userRepository = userRepository
+        _passwordHistoryRepository = passwordHistoryRepository
     End Sub
 
 
@@ -52,7 +54,6 @@ Public Class InternController
     End Function
     <HttpPost(Name:="PostInternAsync")>
     Public Async Function PostInternAsync(dto As InternPostDto) As Task(Of IActionResult)
-        ' CustomerPostDto'dan User'a dönüştürme
         Dim existingUser = Await _userRepository.FindUserByNameAsync(dto.UserName)
 
 
@@ -60,11 +61,21 @@ Public Class InternController
             ' Kullanıcı varsa, mevcut kullanıcıyı güncelle
             _mapper.Map(dto, existingUser)
             _userRepository.Update(existingUser)
-
         Else
             ' Kullanıcı yoksa, yeni bir kullanıcı oluştur
             Dim newUser As User = _mapper.Map(Of User)(dto)
-            Await _userRepository.Post(newUser)
+            Dim pass = PasswordHasher.Hash(dto.Password)
+            newUser.Password = pass
+            Dim user = Await _userRepository.Post(newUser)
+            Dim hashed = pass
+            Dim history = New PasswordHistory() With {
+                .ChangeDate = DateTime.Now,
+                .PasswordHash = hashed,
+                .PasswordSalt = hashed,
+                .Active = True,
+                .UserId = user.Id
+            }
+            _passwordHistoryRepository.AddPasswordHistory(history)
             existingUser = newUser
         End If
 

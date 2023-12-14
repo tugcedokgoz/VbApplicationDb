@@ -14,6 +14,8 @@ Namespace Models
             MyBase.New(options)
         End Sub
 
+        Public Overridable Property PasswordHistories As DbSet(Of PasswordHistory)
+
         Public Overridable Property Users As DbSet(Of User)
 
         Protected Overrides Sub OnConfiguring(optionsBuilder As DbContextOptionsBuilder)
@@ -22,6 +24,20 @@ Namespace Models
         End Sub
 
         Protected Overrides Sub OnModelCreating(modelBuilder As ModelBuilder)
+            modelBuilder.Entity(Of PasswordHistory)(
+                Sub(entity)
+                    entity.ToTable("PasswordHistory")
+
+                    entity.Property(Function(e) e.ChangeDate).HasColumnType("datetime")
+                    entity.Property(Function(e) e.PasswordHash).IsRequired()
+                    entity.Property(Function(e) e.PasswordSalt).IsRequired()
+
+                    entity.HasOne(Function(d) d.User).WithMany(Function(p) p.PasswordHistories).
+                        HasForeignKey(Function(d) d.UserId).
+                        OnDelete(DeleteBehavior.ClientSetNull).
+                        HasConstraintName("FK_PasswordHistory_User")
+                End Sub)
+
             modelBuilder.Entity(Of User)(
                 Sub(entity)
                     entity.ToTable("User")

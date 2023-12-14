@@ -1,5 +1,6 @@
 ﻿Imports VbApplication.DataAccess.Models
 Imports VbApplication.Modell.Models
+Imports VbApplicationDbContext = VbApplication.DataAccess.Models.VbApplicationDbContext
 
 Public Class PasswordHistoryRepository : Implements IPasswordHistoryRepository
 

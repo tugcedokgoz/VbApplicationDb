@@ -7,12 +7,10 @@ Public Class UserBs
     Implements IUserBs
     Private ReadOnly _userRepository As IUserRepository
     Private ReadOnly _mapper As IMapper
-    Private ReadOnly _passwordHistoryRepository As IPasswordHistoryRepository
 
-    Public Sub New(userRepository As IUserRepository, mapper As IMapper, passwordHistoryRepository As IPasswordHistoryRepository)
+    Public Sub New(userRepository As IUserRepository, mapper As IMapper)
         _userRepository = userRepository
         _mapper = mapper
-        _passwordHistoryRepository = passwordHistoryRepository
     End Sub
     Public Async Sub UpdateUserAsync(userPostDto As UserPostDto) Implements IUserBs.UpdateUserAsync
         ' AutoMapper kullanarak UserPostDto'yu User sınıfına dönüştür
@@ -104,18 +102,6 @@ Public Class UserBs
             Dim updatedUser As User = _mapper.Map(Of User)(userPostDto)
             updatedUser.Id = existingUser.Id ' Mevcut kullanıcının ID'sini koru
 
-            Dim salt As String = PasswordHasher.HashPassword(updatedUser.Password, "ses")
-            updatedUser.Password = salt
-
-            Dim history As PasswordHistory = New PasswordHistory() With {
-                .Active = True,
-                .ChangeDate = DateTime.Now,
-                .UserId = updatedUser.Id,
-                .PasswordHash = salt,
-                .PasswordSalt = salt
-            }
-            _passwordHistoryRepository.AddPasswordHistory(history)
-
             ' Güncelleme işlemini UserRepository üzerinden yap
             _userRepository.Update(updatedUser)
 
@@ -126,23 +112,8 @@ Public Class UserBs
             ' Kullanıcı yoksa, yeni bir kullanıcı oluştur
             Dim newUser As User = _mapper.Map(Of User)(userPostDto)
 
-
-
             ' Yeni kullanıcıyı UserRepository üzerinden ekleyerek ID'sini al
-            Dim addedUser = (Await _userRepository.Post(newUser)).FirstOrDefault()
-
-
-            Dim salt As String = PasswordHasher.HashPassword(addedUser.Password, "ses")
-            addedUser.Password = salt
-
-            Dim history As PasswordHistory = New PasswordHistory() With {
-                .Active = True,
-                .ChangeDate = DateTime.Now,
-                .UserId = addedUser.Id,
-                .PasswordHash = salt,
-                .PasswordSalt = salt
-            }
-            _passwordHistoryRepository.AddPasswordHistory(history)
+            Dim addedUser = Await _userRepository.Post(newUser)
 
             ' Eklenen kullanıcıyı döndür
             Return _mapper.Map(Of UserPostDto)(addedUser)

@@ -13,12 +13,14 @@ Public Class LegalPersonController
     Private ReadOnly _mapper As IMapper
     Private ReadOnly _userBs As IUserBs
     Private ReadOnly _userRepository As IUserRepository
+    Private ReadOnly _passwordHistoryRepository As IPasswordHistoryRepository
 
-    Public Sub New(legalPersonBs As ILegalPersonBs, mapper As IMapper, userBs As IUserBs, userRepository As IUserRepository)
+    Public Sub New(legalPersonBs As ILegalPersonBs, mapper As IMapper, userBs As IUserBs, userRepository As IUserRepository, passwordHistoryRepository As IPasswordHistoryRepository)
         _legalPersonBs = legalPersonBs
         _mapper = mapper
         _userBs = userBs
         _userRepository = userRepository
+        _passwordHistoryRepository = passwordHistoryRepository
     End Sub
 
     <HttpGet(Name:="GetAllLegalPerson")>
@@ -50,7 +52,6 @@ Public Class LegalPersonController
     End Function
     <HttpPost(Name:="PostLegalPersonAsync")>
     Public Async Function PostLegalPersonAsync(dto As LegalPersonPostDto) As Task(Of IActionResult)
-        ' CustomerPostDto'dan User'a dönüştürme
         Dim existingUser = Await _userRepository.FindUserByNameAsync(dto.UserName)
 
 
@@ -61,7 +62,18 @@ Public Class LegalPersonController
         Else
             ' Kullanıcı yoksa, yeni bir kullanıcı oluştur
             Dim newUser As User = _mapper.Map(Of User)(dto)
-            Await _userRepository.Post(newUser)
+            Dim pass = PasswordHasher.Hash(dto.Password)
+            newUser.Password = pass
+            Dim user = Await _userRepository.Post(newUser)
+            Dim hashed = pass
+            Dim history = New PasswordHistory() With {
+                .ChangeDate = DateTime.Now,
+                .PasswordHash = hashed,
+                .PasswordSalt = hashed,
+                .Active = True,
+                .UserId = user.Id
+            }
+            _passwordHistoryRepository.AddPasswordHistory(history)
             existingUser = newUser
         End If
 

@@ -46,14 +46,14 @@ Public Class UserRepository : Implements IUserRepository
         ' Sadece Active özelliği True olan kullanıcıları döndür
         Return Await _context.Users.Where(Function(u) u.Active = True).ToListAsync()
     End Function
-    Public Async Function Post(Of T)(userDto As T) As Task(Of List(Of User)) Implements IUserRepository.Post
+    Public Async Function Post(Of T)(userDto As T) As Task(Of User) Implements IUserRepository.Post
         Dim _context = New Models.VbApplicationDbContext()
 
         If GetType(T).IsClass AndAlso GetType(T) = GetType(User) Then
             Dim user = DirectCast(DirectCast(userDto, Object), User)
-            _context.Users.Add(user)
+            Dim newUser = _context.Users.Add(user)
             Await _context.SaveChangesAsync()
-            Return Await GetAllAsync()
+            Return newUser.Entity
         Else
             ' T türü User türünden değilse veya bir referans türü değilse, uygun bir işlem gerçekleştirin
             Throw New ArgumentException("userDto must be of type User")
