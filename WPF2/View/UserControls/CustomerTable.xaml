@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="CustomerTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF2"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" x:Name="CustomerGrid">
+            <dxg:GridControl.Columns>
+                <!-- Sütunları burada belirtin -->
+                <dxg:GridColumn FieldName="CustTitle" Header="İsim" AllowEditing="False" />
+                <dxg:GridColumn FieldName="Email" Header="E-posta" AllowEditing="False"/>
+                <dxg:GridColumn FieldName="CustGender" Header="Cinsiyet" AllowEditing="False" />
+                <dxg:GridColumn FieldName="CustDateOfBirth" Header="Doğum Tarihi" AllowEditing="False"/>
+                <!-- Daha fazla sütun eklenebilir -->
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

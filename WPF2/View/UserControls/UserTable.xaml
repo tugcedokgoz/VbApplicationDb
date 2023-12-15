@@ -1,0 +1,27 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF2"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="UserTable"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True">
+            <dxg:GridControl.Columns>
+                <!-- Sütunları burada belirtin -->
+                <dxg:GridColumn FieldName="Column1" Header="İsim"/>
+                <dxg:GridColumn FieldName="Column2" Header="Column 2"/>
+                <dxg:GridColumn FieldName="Column3" Header="Column 3"/>
+                <dxg:GridColumn FieldName="Column4" Header="Column 4"/>
+            </dxg:GridControl.Columns>
+
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+    </Grid>
+</UserControl>
