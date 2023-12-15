@@ -20,7 +20,7 @@ Namespace Models
 
         Protected Overrides Sub OnConfiguring(optionsBuilder As DbContextOptionsBuilder)
             'TODO /!\ To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-R04PVQ3\SQLEXPRESS02; Initial Catalog=VbApplicationDb; Integrated Security=true; TrustServerCertificate=True")
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-R04PVQ3\SQLEXPRESS; Initial Catalog=VbApplicationDb; Integrated Security=true; TrustServerCertificate=True")
         End Sub
 
         Protected Overrides Sub OnModelCreating(modelBuilder As ModelBuilder)
@@ -59,9 +59,7 @@ Namespace Models
                     entity.Property(Function(e) e.LegalPersonPhone).HasMaxLength(14)
                     entity.Property(Function(e) e.LegalPersonTaxNumber).HasMaxLength(11)
                     entity.Property(Function(e) e.LegalpersonCompanyName).HasMaxLength(50)
-                    entity.Property(Function(e) e.Password).
-                        HasMaxLength(50).
-                        IsUnicode(False)
+                    entity.Property(Function(e) e.Password).IsUnicode(False)
                     entity.Property(Function(e) e.SupContactName).HasMaxLength(50)
                     entity.Property(Function(e) e.SupContactSurname).HasMaxLength(50)
                     entity.Property(Function(e) e.SupContactTitle).HasMaxLength(50)

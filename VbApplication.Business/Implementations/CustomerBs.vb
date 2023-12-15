@@ -21,16 +21,15 @@ Public Class CustomerBs
         _userRepository.Update(updatedCustomer)
     End Sub
 
-    Public Async Sub DeleteAsync(userid As Long) Implements ICustomerBs.DeleteAsync
-        Dim customer As User = Await _userRepository.GetById(userid)
+    Public Async Sub DeleteAsync(customerid As Long) Implements ICustomerBs.DeleteAsync
+        Dim customer = Await _userRepository.GetById(customerid)
 
-        ' Kullanıcı var mı diye kontrol yapın
-        If customer IsNot Nothing Then
-            ' Kullanıcıyı veritabanından silme işlemi için uygun bir metodun çağrılması
-            _userRepository.Delete(userid)
-        Else
-            ' Kullanıcı bulunamadıysa uygun bir işlemi gerçekleştirin (loglama, hata mesajı, vb.)
-            Throw New InvalidOperationException($"Customer with ID {userid} not found.")
+        If customer IsNot Nothing AndAlso customer.Active.HasValue AndAlso customer.Active.Value Then
+            customer.CustTitle = Nothing
+            customer.CustGender = Nothing
+            customer.CustDateOfBirth = Nothing
+
+            Await _userRepository.SaveChangesAsync()
         End If
     End Sub
 
@@ -69,5 +68,4 @@ Public Class CustomerBs
 
         Return customerDto
     End Function
-
 End Class

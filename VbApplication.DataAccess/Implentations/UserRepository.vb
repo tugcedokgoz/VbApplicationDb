@@ -6,7 +6,11 @@ Imports VbApplication.DataAccess.Models
 
 Public Class UserRepository : Implements IUserRepository
 
+    Private ReadOnly _context As Models.VbApplicationDbContext
 
+    Public Sub New()
+        _context = New Models.VbApplicationDbContext()
+    End Sub
 
     Public Sub Update(updatedUser As User) Implements IUserRepository.Update
         Dim _context = New Models.VbApplicationDbContext()
@@ -61,7 +65,6 @@ Public Class UserRepository : Implements IUserRepository
     End Function
 
     Public Async Function GetById(userId As Long) As Task(Of User) Implements IUserRepository.GetById
-        Dim _context = New Models.VbApplicationDbContext()
 
         Return _context.Users.Where(Function(u) u.Id = userId).SingleOrDefault()
     End Function
@@ -71,4 +74,18 @@ Public Class UserRepository : Implements IUserRepository
 
         Return Await _context.Users.FirstOrDefaultAsync(Function(u) u.UserName = userName)
     End Function
+
+    Public Async Function SaveChangesAsync() As Task Implements IUserRepository.SaveChangesAsync
+
+        Await _context.SaveChangesAsync()
+    End Function
+
+    Public Async Function LoginAsync(userName As String) As Task(Of User) Implements IUserRepository.LoginAsync
+        Dim _context = New Models.VbApplicationDbContext()
+
+        Return Await _context.Users.Where(Function(u) u.UserName = userName).FirstOrDefaultAsync()
+    End Function
+
+
+
 End Class

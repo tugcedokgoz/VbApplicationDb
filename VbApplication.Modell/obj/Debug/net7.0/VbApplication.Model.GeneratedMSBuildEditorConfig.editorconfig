@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = VbApplication.Modell
-build_property.ProjectDir = C:\Users\tugcedokgoz\Desktop\VbApplication\VbApplication\VbApplication.Modell\
+build_property.ProjectDir = C:\Users\seyitbulat\github\VbpplicationDb\VbApplication.Modell\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

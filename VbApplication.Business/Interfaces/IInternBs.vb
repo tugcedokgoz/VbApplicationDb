@@ -5,5 +5,5 @@ Public Interface IInternBs
     Function PostInternAsync(internPostDto As InternPostDto) As Task(Of InternPostDto)
     Function GetUserById(userid As Long) As Task(Of InternGetDto)
     Sub UpdateInternAsync(internPostDto As InternPostDto)
-    Sub DeleteAsync(userid As Long)
+    Sub DeleteAsync(Internid As Long)
 End Interface

@@ -6,4 +6,6 @@ Public Interface IUserBs
     Function GetUserById(userid As Long) As Task(Of UserGetDto)
     Sub UpdateUserAsync(userPostDto As UserPostDto)
     Sub DeleteAsync(userid As Long)
+
+    Function LoginAsync(userName As String, password As String) As Task(Of UserGetDto)
 End Interface

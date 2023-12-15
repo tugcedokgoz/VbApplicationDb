@@ -83,6 +83,8 @@ Public Class CustomerController
         Return Ok(_mapper.Map(Of CustomerPostDto)(existingUser))
     End Function
 
+
+
 End Class
 '<HttpPost(Name:="PostCustomerAsync")>
 'Public Async Function PostCustomerAsync(customerGetDto As CustomerGetDto) As Task(Of IActionResult)

@@ -2921,31 +2921,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tugcedokgoz\\.nuget\\packages\\": {},
+    "C:\\Users\\seyitbulat\\.nuget\\packages\\": {},
     "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tugcedokgoz\\Desktop\\VbApplication\\VbApplication\\VbApplication.Modell\\VbApplication.Model.vbproj",
+      "projectUniqueName": "C:\\Users\\seyitbulat\\github\\VbpplicationDb\\VbApplication.Modell\\VbApplication.Model.vbproj",
       "projectName": "VbApplication.Model",
-      "projectPath": "C:\\Users\\tugcedokgoz\\Desktop\\VbApplication\\VbApplication\\VbApplication.Modell\\VbApplication.Model.vbproj",
-      "packagesPath": "C:\\Users\\tugcedokgoz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tugcedokgoz\\Desktop\\VbApplication\\VbApplication\\VbApplication.Modell\\obj\\",
+      "projectPath": "C:\\Users\\seyitbulat\\github\\VbpplicationDb\\VbApplication.Modell\\VbApplication.Model.vbproj",
+      "packagesPath": "C:\\Users\\seyitbulat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\seyitbulat\\github\\VbpplicationDb\\VbApplication.Modell\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tugcedokgoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\seyitbulat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2954,7 +2951,8 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/kYT5fJcwMqMvAe9jClckPCRXHsGGJ3tSBGKyydMsiuleDNLfmv/api/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
@@ -3011,7 +3009,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

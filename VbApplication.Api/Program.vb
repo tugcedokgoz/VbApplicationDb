@@ -1,6 +1,7 @@
 Imports AutoMapper
 Imports Microsoft.AspNetCore.Builder
 Imports Microsoft.AspNetCore.Hosting
+Imports Microsoft.AspNetCore.Rewrite
 Imports Microsoft.Extensions.DependencyInjection
 Imports Microsoft.Extensions.Hosting
 Imports System
@@ -33,12 +34,17 @@ Module Program
         builder.Services.AddDbContext(Of VbApplicationDbContext)()
 
         Dim app = builder.Build()
+        app.UseSwagger()
+        app.UseSwaggerUI()
 
-        ' HTTP istek pipeline'ýný yapýlandýr.
-        If app.Environment.IsDevelopment() Then
-            app.UseSwagger()
-            app.UseSwaggerUI()
-        End If
+
+        app.UseRewriter(New RewriteOptions().AddRedirect("^$", "swagger"))
+
+        '' HTTP istek pipeline'ýný yapýlandýr.
+        'If app.Environment.IsDevelopment() Then
+        '    app.UseSwagger()
+        '    app.UseSwaggerUI()
+        'End If
         app.UseHttpsRedirection()
         app.UseAuthorization()
         app.MapControllers()

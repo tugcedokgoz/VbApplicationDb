@@ -120,5 +120,19 @@ Public Class UserBs
         End If
     End Function
 
+    Public Async Function LoginAsync(userName As String, password As String) As Task(Of UserGetDto) Implements IUserBs.LoginAsync
+        Dim user = Await _userRepository.LoginAsync(userName)
+        Dim passTest As Boolean
+        If (user IsNot Nothing) Then
 
+            passTest = PasswordHasher.Verify(password, user.Password)
+        End If
+        If passTest Then
+            Dim dto = _mapper.Map(Of UserGetDto)(user)
+
+            Return dto
+        Else
+            Throw New KeyNotFoundException($"User not found")
+        End If
+    End Function
 End Class

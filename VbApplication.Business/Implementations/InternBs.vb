@@ -21,16 +21,15 @@ Public Class InternBs
         _userRepository.Update(updatedIntern)
     End Sub
 
-    Public Async Sub DeleteAsync(userid As Long) Implements IInternBs.DeleteAsync
-        Dim intern As User = Await _userRepository.GetById(userid)
+    Public Async Sub DeleteAsync(Internid As Long) Implements IInternBs.DeleteAsync
+        Dim intern = Await _userRepository.GetById(Internid)
 
-        ' Kullanıcı var mı diye kontrol yapın
-        If intern IsNot Nothing Then
-            ' Kullanıcıyı veritabanından silme işlemi için uygun bir metodun çağrılması
-            _userRepository.Delete(userid)
-        Else
-            ' Kullanıcı bulunamadıysa uygun bir işlemi gerçekleştirin (loglama, hata mesajı, vb.)
-            Throw New InvalidOperationException($"Intern with ID {userid} not found.")
+        If intern IsNot Nothing AndAlso intern.Active.HasValue AndAlso intern.Active.Value Then
+            intern.InternSchool = Nothing
+            intern.InternGrade = Nothing
+            intern.Department = Nothing
+
+            Await _userRepository.SaveChangesAsync()
         End If
     End Sub
 

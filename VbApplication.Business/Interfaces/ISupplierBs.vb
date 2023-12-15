@@ -5,5 +5,5 @@ Public Interface ISupplierBs
     Function PostSupplierAsync(SupplierPostDto As SupplierPostDto) As Task(Of SupplierPostDto)
     Function GetUserById(userid As Long) As Task(Of SupplierGetDto)
     Sub UpdateSupplierAsync(SupplierPostDto As SupplierPostDto)
-    Sub DeleteAsync(userid As Long)
+    Sub DeleteAsync(supplierid As Long)
 End Interface

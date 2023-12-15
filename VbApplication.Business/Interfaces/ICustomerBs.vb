@@ -5,5 +5,5 @@ Public Interface ICustomerBs
     Function PostCustomerAsync(customerPostDto As CustomerPostDto) As Task(Of CustomerPostDto)
     Function GetUserById(userid As Long) As Task(Of CustomerGetDto)
     Sub UpdateCustomerAsync(customerPostDto As CustomerPostDto)
-    Sub DeleteAsync(userid As Long)
+    Sub DeleteAsync(customerid As Long)
 End Interface

@@ -21,16 +21,17 @@ Public Class LegalPersonBs
         _userRepository.Update(updatedLegalPerson)
     End Sub
 
-    Public Async Sub DeleteAsync(userid As Long) Implements ILegalPersonBs.DeleteAsync
-        Dim legalPerson As User = Await _userRepository.GetById(userid)
+    Public Async Sub DeleteAsync(legalid As Long) Implements ILegalPersonBs.DeleteAsync
+        Dim legal = Await _userRepository.GetById(legalid)
 
-        ' Kullanıcı var mı diye kontrol yapın
-        If legalPerson IsNot Nothing Then
-            ' Kullanıcıyı veritabanından silme işlemi için uygun bir metodun çağrılması
-            _userRepository.Delete(userid)
-        Else
-            ' Kullanıcı bulunamadıysa uygun bir işlemi gerçekleştirin (loglama, hata mesajı, vb.)
-            Throw New InvalidOperationException($"Legal Person with ID {userid} not found.")
+        If legal IsNot Nothing AndAlso legal.Active.HasValue AndAlso legal.Active.Value Then
+            legal.LegalpersonCompanyName = Nothing
+            legal.LegalPersonTaxNumber = Nothing
+            legal.LegalPersonAddress = Nothing
+            legal.LegalPersonPhone = Nothing
+            legal.LegalPersonFax = Nothing
+
+            Await _userRepository.SaveChangesAsync()
         End If
     End Sub
 

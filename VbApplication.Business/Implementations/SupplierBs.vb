@@ -21,16 +21,15 @@ Public Class SupplierBs
         _userRepository.Update(updatedSupplier)
     End Sub
 
-    Public Async Sub DeleteAsync(userid As Long) Implements ISupplierBs.DeleteAsync
-        Dim supplier As User = Await _userRepository.GetById(userid)
+    Public Async Sub DeleteAsync(supplierid As Long) Implements ISupplierBs.DeleteAsync
+        Dim supplier = Await _userRepository.GetById(supplierid)
 
-        ' Kullanıcı var mı diye kontrol yapın
-        If supplier IsNot Nothing Then
-            ' Kullanıcıyı veritabanından silme işlemi için uygun bir metodun çağrılması
-            _userRepository.Delete(userid)
-        Else
-            ' Kullanıcı bulunamadıysa uygun bir işlemi gerçekleştirin (loglama, hata mesajı, vb.)
-            Throw New InvalidOperationException($"Supplier with ID {userid} not found.")
+        If supplier IsNot Nothing AndAlso supplier.Active.HasValue AndAlso supplier.Active.Value Then
+            supplier.SupContactName = Nothing
+            supplier.SupContactSurname = Nothing
+            supplier.SupContactTitle = Nothing
+
+            Await _userRepository.SaveChangesAsync()
         End If
     End Sub
 

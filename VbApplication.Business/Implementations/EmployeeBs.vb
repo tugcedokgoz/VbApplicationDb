@@ -21,16 +21,15 @@ Public Class EmployeeBs
         _userRepository.Update(updatedEmployee)
     End Sub
 
-    Public Async Sub DeleteAsync(userid As Long) Implements IEmployeeBs.DeleteAsync
-        Dim employee As User = Await _userRepository.GetById(userid)
+    Public Async Sub DeleteAsync(employeeid As Long) Implements IEmployeeBs.DeleteAsync
+        Dim employee = Await _userRepository.GetById(employeeid)
 
-        ' Kullanıcı var mı diye kontrol yapın
-        If employee IsNot Nothing Then
-            ' Kullanıcıyı veritabanından silme işlemi için uygun bir metodun çağrılması
-            _userRepository.Delete(userid)
-        Else
-            ' Kullanıcı bulunamadıysa uygun bir işlemi gerçekleştirin (loglama, hata mesajı, vb.)
-            Throw New InvalidOperationException($"Employee with ID {userid} not found.")
+        If employee IsNot Nothing AndAlso employee.Active.HasValue AndAlso employee.Active.Value Then
+            employee.EmpPosition = Nothing
+            employee.EmpSalary = Nothing
+            employee.Department = Nothing
+
+            Await _userRepository.SaveChangesAsync()
         End If
     End Sub
 

@@ -5,5 +5,5 @@ Public Interface ILegalPersonBs
     Function PostLegalPersonAsync(legalPersonPostDto As LegalPersonPostDto) As Task(Of LegalPersonPostDto)
     Function GetUserById(userid As Long) As Task(Of LegalPersonGetDto)
     Sub UpdateLegalPersonAsync(legalPersonPostDto As LegalPersonPostDto)
-    Sub DeleteAsync(userid As Long)
+    Sub DeleteAsync(legalid As Long)
 End Interface

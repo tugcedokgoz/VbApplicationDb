@@ -5,5 +5,5 @@ Public Interface IEmployeeBs
     Function PostEmployeeAsync(employeePostDto As EmployeePostDto) As Task(Of EmployeePostDto)
     Function GetUserById(userid As Long) As Task(Of EmployeeGetDto)
     Sub UpdateEmployeeAsync(employeePostDto As EmployeePostDto)
-    Sub DeleteAsync(userid As Long)
+    Sub DeleteAsync(employeeid As Long)
 End Interface
